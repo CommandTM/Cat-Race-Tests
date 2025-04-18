@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://barmnkl7yasns"]
+
+[ext_resource type="Script" uid="uid://ohobxjpy6846" path="res://Scripts/bounce_test.gd" id="1_8od7v"]
+[ext_resource type="Texture2D" uid="uid://dr2axgjuq2qu5" path="res://Sprites/icon.svg" id="1_lc1oi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8od7v"]
+distance = -480.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qc4db"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ys1qc"]
+normal = Vector2(-1, 0)
+distance = -640.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_35xla"]
+normal = Vector2(1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qc4db"]
+radius = 64.0703
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_8od7v")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_qc4db")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ys1qc")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_35xla")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(389, 198)
+script = ExtResource("1_8od7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_lc1oi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_qc4db")
