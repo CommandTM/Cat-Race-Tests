@@ -38,9 +38,21 @@ shape = SubResource("WorldBoundaryShape2D_35xla")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(389, 198)
 script = ExtResource("1_8od7v")
+SPEED = 500.0
+BOUNCE_RANDOMNESS = 0.524
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("1_lc1oi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_qc4db")
+
+[node name="Spin" type="Node2D" parent="CharacterBody2D"]
+unique_name_in_owner = true
+
+[node name="Direction" type="Sprite2D" parent="CharacterBody2D/Spin"]
+unique_name_in_owner = true
+modulate = Color(1, 0.38319, 0.448732, 1)
+position = Vector2(100, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_lc1oi")
