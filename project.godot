@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cat Race Tests"
-run/main_scene="res://Scenes/test.tscn"
+run/main_scene="uid://1t75jrwxwcfn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
@@ -19,7 +19,13 @@ config/icon="res://Sprites/icon.svg"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/stretch/mode="viewport"
 
 [dotnet]
 
 project/assembly_name="Cat Race Tests"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

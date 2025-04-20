@@ -1,0 +1,18 @@
+{
+	"name": "Pink",
+	"color": "pink",
+	"sprites": {
+		"north": "res://Cats/Sprites/Pink/pink_north.png",
+		"south": "res://Cats/Sprites/Pink/pink_south.png",
+		"east": "res://Cats/Sprites/Pink/pink_east.png",
+		"west": "res://Cats/Sprites/Pink/pink_west.png",
+		"north_east": "res://Cats/Sprites/Pink/pink_north_east.png",
+		"north_west": "res://Cats/Sprites/Pink/pink_north_west.png",
+		"south_east": "res://Cats/Sprites/Pink/pink_south_east.png",
+		"south_west": "res://Cats/Sprites/Pink/pink_south_west.png",
+	},
+	"hitbox": "res://Cats/Hitboxes/pink.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxo3w2upvyups"]
+
+[ext_resource type="Texture2D" uid="uid://dnseuuvrndli" path="res://Sprites/goal.png" id="1_hm1w3"]
+[ext_resource type="Script" uid="uid://bqtfosqu72cv8" path="res://Scripts/kiwi.gd" id="1_l6ien"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6ien"]
+radius = 8.0
+
+[node name="Kiwi" type="Area2D"]
+script = ExtResource("1_l6ien")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_hm1w3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("CircleShape2D_l6ien")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Cat Name" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_right = 640.0
+offset_bottom = 480.0
+bbcode_enabled = true
+text = "[color=magenta][font_size=75]Resolute Mind Afternoon"
+scroll_active = false
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.025
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
