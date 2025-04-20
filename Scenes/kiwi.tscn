@@ -7,6 +7,7 @@
 radius = 8.0
 
 [node name="Kiwi" type="Area2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_l6ien")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,15 +22,15 @@ shape = SubResource("CircleShape2D_l6ien")
 
 [node name="Cat Name" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
-offset_right = 640.0
-offset_bottom = 480.0
+offset_right = 1280.0
+offset_bottom = 960.0
 bbcode_enabled = true
-text = "[color=magenta][font_size=75]Resolute Mind Afternoon"
+text = "[color=magenta][font_size=150]Resolute Mind Afternoon"
 scroll_active = false
 vertical_alignment = 2
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.025
+wait_time = 0.001
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

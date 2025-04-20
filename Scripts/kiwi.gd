@@ -25,6 +25,6 @@ func _on_body_entered(body:Node2D) -> void:
 func _on_timer_timeout() -> void:
 	text_size = text_size + 1
 	win_text.text = "[color=" + cat_color + "][font_size=" + str(text_size) + "]" + cat_name
-	if text_size < 75:
+	if text_size < 150:
 		timer.start()
 	
