@@ -1,0 +1,19 @@
+{
+	"name": "Big Father Gunsmoke",
+	"color": "gray",
+	"sprites": {
+		"north": "res://Cats/Sprites/Gray/gray_north.png",
+		"south": "res://Cats/Sprites/Gray/gray_south.png",
+		"east": "res://Cats/Sprites/Gray/gray_east.png",
+		"west": "res://Cats/Sprites/Gray/gray_west.png",
+		"north_east": "res://Cats/Sprites/Gray/gray_north_east.png",
+		"north_west": "res://Cats/Sprites/Gray/gray_north_west.png",
+		"south_east": "res://Cats/Sprites/Gray/gray_south_east.png",
+		"south_west": "res://Cats/Sprites/Gray/gray_south_west.png",
+		"win": "res://Cats/Sprites/Gray/gray_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/gray.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

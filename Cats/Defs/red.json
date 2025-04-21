@@ -1,0 +1,19 @@
+{
+	"name": "Sunset Hellspawn Paradise",
+	"color": "red",
+	"sprites": {
+		"north": "res://Cats/Sprites/Red/red_north.png",
+		"south": "res://Cats/Sprites/Red/red_south.png",
+		"east": "res://Cats/Sprites/Red/red_east.png",
+		"west": "res://Cats/Sprites/Red/red_west.png",
+		"north_east": "res://Cats/Sprites/Red/red_north_east.png",
+		"north_west": "res://Cats/Sprites/Red/red_north_west.png",
+		"south_east": "res://Cats/Sprites/Red/red_south_east.png",
+		"south_west": "res://Cats/Sprites/Red/red_south_west.png",
+		"win": "res://Cats/Sprites/Red/red_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/red.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

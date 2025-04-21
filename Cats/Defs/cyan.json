@@ -1,0 +1,19 @@
+{
+	"name": "Tylenol",
+	"color": "cyan",
+	"sprites": {
+		"north": "res://Cats/Sprites/Cyan/cyan_north.png",
+		"south": "res://Cats/Sprites/Cyan/cyan_south.png",
+		"east": "res://Cats/Sprites/Cyan/cyan_east.png",
+		"west": "res://Cats/Sprites/Cyan/cyan_west.png",
+		"north_east": "res://Cats/Sprites/Cyan/cyan_north_east.png",
+		"north_west": "res://Cats/Sprites/Cyan/cyan_north_west.png",
+		"south_east": "res://Cats/Sprites/Cyan/cyan_south_east.png",
+		"south_west": "res://Cats/Sprites/Cyan/cyan_south_west.png",
+		"win": "res://Cats/Sprites/Cyan/cyan_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/cyan.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

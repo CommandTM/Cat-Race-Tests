@@ -1,5 +1,5 @@
 {
-	"name": "Pink",
+	"name": "Shim'at Lea 'Izevel",
 	"color": "pink",
 	"sprites": {
 		"north": "res://Cats/Sprites/Pink/pink_north.png",
@@ -10,6 +10,7 @@
 		"north_west": "res://Cats/Sprites/Pink/pink_north_west.png",
 		"south_east": "res://Cats/Sprites/Pink/pink_south_east.png",
 		"south_west": "res://Cats/Sprites/Pink/pink_south_west.png",
+		"win": "res://Cats/Sprites/Pink/pink_win.png"
 	},
 	"hitbox": "res://Cats/Hitboxes/pink.tres",
 	"wins": 0,

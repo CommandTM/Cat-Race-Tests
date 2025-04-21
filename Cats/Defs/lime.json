@@ -1,0 +1,19 @@
+{
+	"name": "Dopey Gloop",
+	"color": "lime",
+	"sprites": {
+		"north": "res://Cats/Sprites/Lime/lime_north.png",
+		"south": "res://Cats/Sprites/Lime/lime_south.png",
+		"east": "res://Cats/Sprites/Lime/lime_north.png",
+		"west": "res://Cats/Sprites/Lime/lime_south.png",
+		"north_east": "res://Cats/Sprites/Lime/lime_north.png",
+		"north_west": "res://Cats/Sprites/Lime/lime_north.png",
+		"south_east": "res://Cats/Sprites/Lime/lime_south.png",
+		"south_west": "res://Cats/Sprites/Lime/lime_south.png",
+		"win": "res://Cats/Sprites/Lime/lime_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/lime.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

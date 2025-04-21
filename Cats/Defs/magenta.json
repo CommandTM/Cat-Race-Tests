@@ -1,5 +1,5 @@
 {
-	"name": "Magenta",
+	"name": "Underground Flapjack",
 	"color": "magenta",
 	"sprites": {
 		"north": "res://Cats/Sprites/Magenta/magenta_north.png",
@@ -10,6 +10,7 @@
 		"north_west": "res://Cats/Sprites/Magenta/magenta_north_west.png",
 		"south_east": "res://Cats/Sprites/Magenta/magenta_south_east.png",
 		"south_west": "res://Cats/Sprites/Magenta/magenta_south_west.png",
+		"win": "res://Cats/Sprites/Magenta/magenta_win.png"
 	},
 	"hitbox": "res://Cats/Hitboxes/magenta.tres",
 	"wins": 0,

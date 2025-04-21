@@ -1,14 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://1t75jrwxwcfn"]
+[gd_scene load_steps=12 format=3 uid="uid://1t75jrwxwcfn"]
 
 [ext_resource type="Texture2D" uid="uid://dyhg8fn8fnvdq" path="res://Sprites/town.png" id="1_kswdu"]
+[ext_resource type="Script" uid="uid://cn5tkp5qdi3uv" path="res://Scripts/map.gd" id="1_poxg2"]
+[ext_resource type="AudioStream" uid="uid://dyg8vo84p5l8a" path="res://Sounds/Countdown.wav" id="2_7kgdu"]
 [ext_resource type="PackedScene" uid="uid://bhp782ij05uih" path="res://Scenes/cat.tscn" id="2_iau6b"]
 [ext_resource type="PackedScene" uid="uid://cxo3w2upvyups" path="res://Scenes/kiwi.tscn" id="3_28ev0"]
+[ext_resource type="PackedScene" uid="uid://fxb07ef57lv2" path="res://Scenes/bouncy.tscn" id="6_7kgdu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7kgdu"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gflae"]
+distance = -960.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2rtke"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8t1t8"]
+normal = Vector2(-1, 0)
+distance = -1280.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iau6b"]
 radius = 18.0
 height = 36.0
 
 [node name="town" type="Node2D"]
+script = ExtResource("1_poxg2")
+
+[node name="Count That Shit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7kgdu")
+
+[node name="Bouncy Collide" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="North" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_7kgdu")
+
+[node name="South" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_gflae")
+
+[node name="West" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_2rtke")
+
+[node name="East" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_8t1t8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -31,20 +67,43 @@ polygon = PackedVector2Array(307, 2, 308, 9, 352, 13, 386, 37, 407, 73, 407, 104
 polygon = PackedVector2Array(308, -1, 0, 0, 0, 479, 330, 480, 330, 437, 326, 441, 71, 444, 62, 432, 62, 338, 78, 332, 74, 267, 113, 232, 201, 234, 202, 208, 209, 202, 291, 204, 290, 160, 263, 149, 239, 139, 224, 118, 215, 93, 213, 59, 226, 39, 254, 20, 291, 8, 305, 6)
 
 [node name="Kiwi" parent="." instance=ExtResource("3_28ev0")]
-position = Vector2(802, 783)
+position = Vector2(810, 785)
 
-[node name="Cat" parent="." instance=ExtResource("2_iau6b")]
-position = Vector2(508, 156)
+[node name="Cats" type="Node2D" parent="."]
+
+[node name="Cat4" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(540, 92)
 JSON_PATH = "res://Cats/Defs/blue.json"
 
-[node name="Cat2" parent="." instance=ExtResource("2_iau6b")]
-position = Vector2(727, 169)
+[node name="Cat" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(605, 87)
+JSON_PATH = "res://Cats/Defs/cyan.json"
+
+[node name="Cat2" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(678, 81)
+JSON_PATH = "res://Cats/Defs/gray.json"
+
+[node name="Cat3" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(535, 150)
+JSON_PATH = "res://Cats/Defs/green.json"
+
+[node name="Cat6" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(675, 143)
 JSON_PATH = "res://Cats/Defs/magenta.json"
 
-[node name="Cat3" parent="." instance=ExtResource("2_iau6b")]
-position = Vector2(599, 67)
+[node name="Cat7" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(536, 199)
+JSON_PATH = "res://Cats/Defs/orange.json"
+
+[node name="Cat8" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(610, 192)
 JSON_PATH = "res://Cats/Defs/pink.json"
 
-[node name="Cat4" parent="." instance=ExtResource("2_iau6b")]
-position = Vector2(609, 229)
-JSON_PATH = "res://Cats/Defs/yellow.json"
+[node name="Cat9" parent="Cats" instance=ExtResource("2_iau6b")]
+position = Vector2(678, 191)
+JSON_PATH = "res://Cats/Defs/purple.json"
+
+[node name="Bouncy" parent="." instance=ExtResource("6_7kgdu")]
+position = Vector2(607, 520)
+
+[connection signal="finished" from="Count That Shit" to="." method="_on_count_that_shit_finished"]

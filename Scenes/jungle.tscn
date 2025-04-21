@@ -1,0 +1,202 @@
+[gd_scene load_steps=25 format=3 uid="uid://bkelpflqjhlbp"]
+
+[ext_resource type="Script" uid="uid://cn5tkp5qdi3uv" path="res://Scripts/map.gd" id="1_d7e3u"]
+[ext_resource type="AudioStream" uid="uid://dyg8vo84p5l8a" path="res://Sounds/Countdown.wav" id="2_tf6aw"]
+[ext_resource type="Texture2D" uid="uid://ce78020allqa5" path="res://Sprites/the_jungle.png" id="3_d7e3u"]
+[ext_resource type="PackedScene" uid="uid://cxo3w2upvyups" path="res://Scenes/kiwi.tscn" id="4_lkm5k"]
+[ext_resource type="PackedScene" uid="uid://bhp782ij05uih" path="res://Scenes/cat.tscn" id="5_cbkqq"]
+[ext_resource type="PackedScene" uid="uid://fxb07ef57lv2" path="res://Scenes/bouncy.tscn" id="6_3yqpr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7kgdu"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gflae"]
+distance = -960.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2rtke"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8t1t8"]
+normal = Vector2(-1, 0)
+distance = -1280.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf6aw"]
+size = Vector2(110.548, 18.7072)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2x73"]
+radius = 16.2174
+height = 32.4348
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkm5k"]
+radius = 14.055
+height = 28.11
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbkqq"]
+radius = 2.7029
+height = 7.33228
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqpr"]
+size = Vector2(7.83768, 19.1654)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qydal"]
+size = Vector2(7.02756, 22.3733)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbsbq"]
+size = Vector2(7.56816, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rrgc"]
+size = Vector2(10, 35.6631)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaexg"]
+size = Vector2(7.83765, 20.6221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3s7qv"]
+size = Vector2(8.91885, 29.7056)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teqxr"]
+size = Vector2(6.54401, 29.7056)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jm8f"]
+size = Vector2(11.6219, 53.6176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpuvd"]
+size = Vector2(10.271, 12.2914)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o86dd"]
+size = Vector2(10.8117, 16.4158)
+
+[node name="town" type="Node2D"]
+script = ExtResource("1_d7e3u")
+
+[node name="Count That Shit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_tf6aw")
+
+[node name="Bouncy Collide" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="North" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_7kgdu")
+
+[node name="South" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_gflae")
+
+[node name="West" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_2rtke")
+
+[node name="East" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_8t1t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(695.248, 523)
+scale = Vector2(1.23711, 1.32083)
+texture = ExtResource("3_d7e3u")
+
+[node name="Collision" type="StaticBody2D" parent="Sprite2D"]
+position = Vector2(-478.5, -396.5)
+scale = Vector2(1.49531, 1.65208)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(-41.241, 80.2618, 2.00537, 52.204, 13.3575, 48.1311, 29.5749, 50.3938, 40.3865, 54.0142, 47.4141, 58.5396, 56.0634, 58.0871, 62.5503, 54.0142, 69.0373, 48.1311, 77.6865, 41.3429, 88.4981, 37.2701, 126.339, 37.2701, 130.123, 17.3581, 246.347, 22.3361, 250.132, 23.2412, 246.888, 48.5837, 249.05, 53.5616, 256.618, 54.4667, 268.511, 50.3938, 282.026, 45.8684, 289.594, 42.7006, 302.027, 45.8684, 312.839, 57.6345, 327.975, 71.2109, 337.705, 77.999, 353.382, 78.4516, 360.41, 76.1889, 369.059, 73.4736, 372.843, 69.4007, 371.762, 61.7074, 364.734, 48.5837, 366.356, 32.7446, 374.465, 15.0954, 391.763, 5.1394, 408.521, 1.97159, 432.307, 9.2123, 442.578, 12.8327, 449.065, 19.6208, 453.93, 30.0293, 451.768, 40.4379, 448.524, 52.204, 439.875, 58.9922, 431.766, 64.4227, 427.442, 68.9482, 425.82, 73.4736, 427.982, 77.999, 432.307, 79.8092, 438.794, 78.4516, 450.146, 73.4736, 462.579, 68.0431, 469.066, 65.7803, 478.256, 69.8532, 502.582, 83.4296, 501.501, 91.5754, 500.42, 108.32, 505.826, 122.801, 513.394, 126.421, 529.611, 125.969, 536.639, 118.275, 550.694, 106.509, 566.911, 100.174, 582.588, 98.8161, 605.292, 104.247, 618.807, 112.845, 629.619, 126.874, 631.24, 142.713, 627.456, 159.91, 624.213, 171.223, 613.942, 180.727, 603.671, 189.777, 584.75, 194.755, 553.937, 196.566, 535.558, 198.828, 526.368, 205.617, 516.097, 218.288, 505.285, 228.244, 498.258, 240.01, 498.258, 252.681, 502.582, 259.469, 510.691, 266.71, 517.719, 277.119, 523.665, 288.885, 527.449, 293.863, 526.908, 299.293, 522.043, 306.534, 515.016, 315.585, 508.529, 320.563, 509.61, 328.256, 516.637, 334.592, 529.611, 340.927, 541.504, 347.715, 551.234, 357.671, 564.749, 368.985, 570.695, 378.036, 567.992, 388.444, 554.478, 398.4, 520.962, 403.831, 513.394, 405.641, 513.394, 442.297, 636.646, 441.392, 637.187, 6.49704, 538.801, -6.1742, 94.9851, -14.32, -58.5396, -12.0573, -58.5396, 81.6194)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(-58.5396, 81.4393, -41.241, 80.0645, -46.1062, 95.1873, -47.1874, 105.269, -51.512, 117.184, -53.1338, 127.266, -52.0526, 136.89, -45.0251, 152.471, -39.6193, 167.136, -30.4294, 179.509, -17.4555, 184.55, -2.31927, 190.049, 19.8445, 192.799, 56.0634, 193.257, 69.5779, 190.966, 76.6054, 188.674, 84.1735, 183.633, 90.6605, 176.301, 100.391, 164.386, 108.5, 148.805, 116.608, 137.806, 125.798, 130.932, 138.772, 129.099, 174.991, 129.099, 186.343, 130.016, 206.345, 132.765, 226.346, 134.14, 232.292, 137.806, 245.266, 163.469, 255.537, 169.427, 267.43, 173.551, 282.026, 172.635, 290.675, 171.26, 302.027, 167.136, 315.001, 166.677, 320.947, 185.925, 323.65, 196.923, 331.219, 203.797, 332.3, 222.586, 343.652, 236.334, 343.652, 242.292, 340.408, 245.041, 335.543, 248.249, 329.056, 249.166, 314.461, 249.166, 304.19, 245.041, 298.784, 240.917, 287.972, 234.501, 273.917, 229.002, 262.024, 228.544, 252.834, 229.46, 245.266, 236.793, 239.861, 241.375, 235.536, 248.249, 232.292, 257.415, 232.292, 265.664, 236.076, 274.829, 241.482, 282.161, 249.05, 290.868, 257.7, 295.451, 271.755, 299.117, 280.945, 302.783, 291.216, 302.783, 314.461, 304.158, 317.163, 315.157, 317.163, 326.155, 314.461, 332.113, 304.19, 335.321, 291.216, 338.528, 277.161, 338.528, 266.349, 338.528, 250.672, 340.82, 224.184, 340.82, 216.616, 339.903, 208.507, 328.905, 199.317, 312.407, 194.992, 307.366, 185.803, 302.325, 172.288, 300.492, 159.314, 299.576, 148.503, 300.492, 142.016, 302.783, 134.988, 306.45, 127.42, 307.366, 122.555, 303.7, 115.527, 299.576, 107.418, 293.618, 102.013, 289.952, 96.0663, 284.453, 92.2822, 280.328, 89.5793, 273.912, 87.9576, 267.955, 92.2822, 261.539, 103.094, 261.539, 114.987, 260.164, 123.636, 260.164, 131.745, 261.539, 141.475, 262.914, 154.989, 264.289, 167.423, 267.038, 178.775, 267.038, 188.505, 264.289, 193.911, 258.79, 198.236, 253.29, 198.236, 244.583, 198.776, 229.002, 196.074, 215.712, 189.587, 205.63, 174.45, 199.673, 156.611, 196.465, 139.313, 196.923, 110.662, 197.84, 91.201, 204.714, 68.4967, 212.046, 30.6561, 212.046, 9.57349, 217.545, 0.383629, 223.503, -4.48159, 231.752, -12.5903, 250.082, -15.8338, 261.081, -15.8338, 279.87, -13.6714, 294.535, -13.6714, 308.283, -11.5091, 319.739, -7.72507, 327.53, -3.94101, 337.154, 4.70827, 345.861, 17.1416, 351.36, 31.1967, 353.651, 40.3865, 354.11, 70.659, 354.568, 83.0923, 355.026, 105.256, 376.106, 129.582, 401.311, 145.8, 413.226, 163.098, 421.017, 191.208, 428.807, 217.156, 434.765, 235.536, 437.056, 245.807, 437.515, 257.159, 432.015, 273.376, 423.767, 287.972, 411.852, 300.405, 400.395, 312.298, 393.062, 336.624, 391.688, 348.517, 426.058, 360.41, 411.393, 371.762, 423.308, 382.574, 410.935, 399.332, 426.516, 411.224, 412.768, 426.361, 426.974, 442.578, 408.185, 463.661, 428.349, 473.932, 415.976, 496.636, 433.39, 513.935, 404.977, 512.853, 439.348, -56.3773, 440.264)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(425.685, 369.879)
+shape = SubResource("RectangleShape2D_tf6aw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(366.897, 140.556)
+shape = SubResource("CapsuleShape2D_d2x73")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(452.308, 220.295)
+shape = SubResource("CapsuleShape2D_lkm5k")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(158.233, 352.735)
+shape = SubResource("CapsuleShape2D_cbkqq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(140.259, 27.8627)
+shape = SubResource("RectangleShape2D_3yqpr")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(164.99, 28.9265)
+shape = SubResource("RectangleShape2D_qydal")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(206.885, 27.8217)
+shape = SubResource("RectangleShape2D_mbsbq")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(221.887, 35.195)
+shape = SubResource("RectangleShape2D_1rrgc")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(390.548, 12.928)
+shape = SubResource("RectangleShape2D_yaexg")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(440.01, 23.9674)
+shape = SubResource("RectangleShape2D_3s7qv")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(551.263, 117.372)
+shape = SubResource("RectangleShape2D_teqxr")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(612.185, 127.495)
+shape = SubResource("RectangleShape2D_3jm8f")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(184.451, 125.621)
+shape = SubResource("RectangleShape2D_fpuvd")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(422.036, 356.818)
+shape = SubResource("RectangleShape2D_o86dd")
+
+[node name="Kiwi" parent="." instance=ExtResource("4_lkm5k")]
+position = Vector2(408, 505)
+
+[node name="Cats" type="Node2D" parent="."]
+
+[node name="Cat" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(128, 152)
+JSON_PATH = "res://Cats/Defs/blue.json"
+
+[node name="Cat2" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(119, 231)
+JSON_PATH = "res://Cats/Defs/cyan.json"
+
+[node name="Cat3" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(120, 300)
+JSON_PATH = "res://Cats/Defs/gray.json"
+
+[node name="Cat4" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(119, 363)
+JSON_PATH = "res://Cats/Defs/green.json"
+
+[node name="Cat5" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(196, 184)
+JSON_PATH = "res://Cats/Defs/lime.json"
+
+[node name="Cat6" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(196, 262)
+JSON_PATH = "res://Cats/Defs/magenta.json"
+
+[node name="Cat7" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(189, 330)
+JSON_PATH = "res://Cats/Defs/orange.json"
+
+[node name="Cat8" parent="Cats" instance=ExtResource("5_cbkqq")]
+position = Vector2(55, 259)
+JSON_PATH = "res://Cats/Defs/pink.json"
+
+[node name="Bouncy" parent="." instance=ExtResource("6_3yqpr")]
+position = Vector2(640, 480)
+
+[connection signal="finished" from="Count That Shit" to="." method="_on_count_that_shit_finished"]

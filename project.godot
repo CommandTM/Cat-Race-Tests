@@ -15,6 +15,10 @@ run/main_scene="uid://1t75jrwxwcfn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+TheWorldIsFrozen="*res://Scripts/the_world_is_frozen.gd"
+
 [display]
 
 window/size/viewport_width=1280

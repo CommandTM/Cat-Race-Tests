@@ -1,0 +1,19 @@
+{
+	"name": "Greasy Garrett",
+	"color": "white",
+	"sprites": {
+		"north": "res://Cats/Sprites/White/white_north.png",
+		"south": "res://Cats/Sprites/White/white_south.png",
+		"east": "res://Cats/Sprites/White/white_east.png",
+		"west": "res://Cats/Sprites/White/white_west.png",
+		"north_east": "res://Cats/Sprites/White/white_north_east.png",
+		"north_west": "res://Cats/Sprites/White/white_north_west.png",
+		"south_east": "res://Cats/Sprites/White/white_south_east.png",
+		"south_west": "res://Cats/Sprites/White/white_south_west.png",
+		"win": "res://Cats/Sprites/White/white_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/white.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

@@ -23,6 +23,7 @@ var south_west: Image
 @onready var direction_indicate: Node2D = get_node("Spin/Direction")
 @onready var hitbox: CollisionShape2D = get_node("Hitbox")
 @onready var sprite: Sprite2D = get_node("Sprite")
+@onready var bounce: AudioStreamPlayer2D = get_node("Bounce")
 
 var rng = RandomNumberGenerator.new()
 
@@ -30,16 +31,19 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	#start()
 	data = json.parse_string(FileAccess.open(JSON_PATH, FileAccess.READ).get_as_text())
-	print(data)
 	create()
 	pass
 
 
 func _physics_process(delta: float) -> void:
-	velocity = direction * SPEED
+	if not TheWorldIsFrozen.truth:
+		velocity = direction * SPEED
+	else:
+		velocity = Vector2.ZERO
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal())
+		bounce.play()
 		direction = velocity / SPEED
 		spin.look_at(position+direction)
 		spin.rotate(rng.randf_range(-BOUNCE_RANDOMNESS, BOUNCE_RANDOMNESS))
@@ -71,14 +75,12 @@ func create() -> void:
 	north_west.load(data['sprites']['north_west'])
 	south_east.load(data['sprites']['south_east'])
 	south_west.load(data['sprites']['south_west'])
-	
-	start()
+	sprite.texture = ImageTexture.create_from_image(east)
 	pass
 	
 
 func look() -> void: 
 	var look: Vector2 = direction.round()
-	print(look)
 	if look.x == 0 and look.y == -1:
 		sprite.texture = ImageTexture.create_from_image(north)
 		pass

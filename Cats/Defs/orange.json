@@ -1,0 +1,19 @@
+{
+	"name": "Assuming Gentle Mister",
+	"color": "orange",
+	"sprites": {
+		"north": "res://Cats/Sprites/Orange/orange_north.png",
+		"south": "res://Cats/Sprites/Orange/orange_south.png",
+		"east": "res://Cats/Sprites/Orange/orange_east.png",
+		"west": "res://Cats/Sprites/Orange/orange_west.png",
+		"north_east": "res://Cats/Sprites/Orange/orange_north_east.png",
+		"north_west": "res://Cats/Sprites/Orange/orange_north_west.png",
+		"south_east": "res://Cats/Sprites/Orange/orange_south_east.png",
+		"south_west": "res://Cats/Sprites/Orange/orange_south_west.png",
+		"win": "res://Cats/Sprites/Orange/orange_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/orange.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

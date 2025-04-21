@@ -1,0 +1,19 @@
+{
+	"name": "John Theodore Figley",
+	"color": "green",
+	"sprites": {
+		"north": "res://Cats/Sprites/Green/green_north.png",
+		"south": "res://Cats/Sprites/Green/green_south.png",
+		"east": "res://Cats/Sprites/Green/green_east.png",
+		"west": "res://Cats/Sprites/Green/green_west.png",
+		"north_east": "res://Cats/Sprites/Green/green_north_east.png",
+		"north_west": "res://Cats/Sprites/Green/green_north_west.png",
+		"south_east": "res://Cats/Sprites/Green/green_south_east.png",
+		"south_west": "res://Cats/Sprites/Green/green_south_west.png",
+		"win": "res://Cats/Sprites/Green/green_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/green.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

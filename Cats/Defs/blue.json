@@ -1,5 +1,5 @@
 {
-	"name": "Blue",
+	"name": "noos",
 	"color": "blue",
 	"sprites": {
 		"north": "res://Cats/Sprites/Blue/blue_all_directions.png",
@@ -10,6 +10,7 @@
 		"north_west": "res://Cats/Sprites/Blue/blue_all_directions.png",
 		"south_east": "res://Cats/Sprites/Blue/blue_all_directions.png",
 		"south_west": "res://Cats/Sprites/Blue/blue_all_directions.png",
+		"win": "res://Cats/Sprites/Blue/blue_win.png"
 	},
 	"hitbox": "res://Cats/Hitboxes/blue.tres",
 	"wins": 0,

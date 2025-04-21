@@ -1,18 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhp782ij05uih"]
+[gd_scene load_steps=3 format=3 uid="uid://bhp782ij05uih"]
 
 [ext_resource type="Script" uid="uid://dtyj1f8f48bmm" path="res://Scripts/cat.gd" id="1_r2uub"]
+[ext_resource type="AudioStream" uid="uid://ccahagj7b8l1w" path="res://Sounds/CatBounce.ogg" id="2_23j0x"]
 
 [node name="Cat" type="CharacterBody2D" groups=["cat"]]
 script = ExtResource("1_r2uub")
+SPEED = 200.0
 BOUNCE_RANDOMNESS = 0.524
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(-1, 0)
 
 [node name="Spin" type="Node2D" parent="."]
 
 [node name="Direction" type="Node2D" parent="Spin"]
 position = Vector2(100, 0)
+
+[node name="Bounce" type="AudioStreamPlayer2D" parent="."]
+texture_filter = 1
+stream = ExtResource("2_23j0x")
+volume_db = -12.876
+attenuation = 0.210224
+playback_type = 1

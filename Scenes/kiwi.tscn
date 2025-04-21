@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxo3w2upvyups"]
+[gd_scene load_steps=5 format=3 uid="uid://cxo3w2upvyups"]
 
 [ext_resource type="Texture2D" uid="uid://dnseuuvrndli" path="res://Sprites/goal.png" id="1_hm1w3"]
 [ext_resource type="Script" uid="uid://bqtfosqu72cv8" path="res://Scripts/kiwi.gd" id="1_l6ien"]
+[ext_resource type="AudioStream" uid="uid://dqfbcpy1mx2vc" path="res://Sounds/262312__steffcaffrey__cat-meow1.wav" id="4_87o5q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6ien"]
 radius = 8.0
@@ -20,6 +21,10 @@ shape = SubResource("CircleShape2D_l6ien")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Win" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(641, 479)
+scale = Vector2(1e-05, 1e-05)
+
 [node name="Cat Name" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
 offset_right = 1280.0
@@ -33,5 +38,14 @@ vertical_alignment = 2
 wait_time = 0.001
 one_shot = true
 
+[node name="Image Timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="Meow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_87o5q")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Image Timer" to="." method="_on_image_timer_timeout"]
+[connection signal="finished" from="Meow" to="." method="_on_meow_finished"]

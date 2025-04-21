@@ -1,0 +1,19 @@
+{
+	"name": "Purple",
+	"color": "purple",
+	"sprites": {
+		"north": "res://Cats/Sprites/Purple/purple_north.png",
+		"south": "res://Cats/Sprites/Purple/purple_south.png",
+		"east": "res://Cats/Sprites/Purple/purple_east.png",
+		"west": "res://Cats/Sprites/Purple/purple_west.png",
+		"north_east": "res://Cats/Sprites/Purple/purple_north_east.png",
+		"north_west": "res://Cats/Sprites/Purple/purple_north_west.png",
+		"south_east": "res://Cats/Sprites/Purple/purple_south_east.png",
+		"south_west": "res://Cats/Sprites/Purple/purple_south_west.png",
+		"win": "res://Cats/Sprites/Purple/purple_win.png"
+	},
+	"hitbox": "res://Cats/Hitboxes/purple.tres",
+	"wins": 0,
+	"losses": 0,
+	"name_revealed": false
+}

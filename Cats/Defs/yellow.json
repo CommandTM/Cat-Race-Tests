@@ -1,5 +1,5 @@
 {
-	"name": "Yellow",
+	"name": "Citrus Cryodust",
 	"color": "yellow",
 	"sprites": {
 		"north": "res://Cats/Sprites/Yellow/yellow_north.png",
@@ -10,6 +10,7 @@
 		"north_west": "res://Cats/Sprites/Yellow/yellow_north_west.png",
 		"south_east": "res://Cats/Sprites/Yellow/yellow_south_east.png",
 		"south_west": "res://Cats/Sprites/Yellow/yellow_south_west.png",
+		"win": "res://Cats/Sprites/Yellow/yellow_win.png"
 	},
 	"hitbox": "res://Cats/Hitboxes/yellow.tres",
 	"wins": 0,
