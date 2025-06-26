@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fuwsrx0c435x"
+path="res://.godot/imported/Silly Race - Marble Madness (FM Towns) Music [TubeRipper.cc].ogg-f96c80aba58aa48691e137522c7102f7.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Silly Race - Marble Madness (FM Towns) Music [TubeRipper.cc].ogg"
+dest_files=["res://.godot/imported/Silly Race - Marble Madness (FM Towns) Music [TubeRipper.cc].ogg-f96c80aba58aa48691e137522c7102f7.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,183 @@
+[gd_scene load_steps=14 format=3 uid="uid://dq5xqp5brdi5"]
+
+[ext_resource type="Script" uid="uid://cn5tkp5qdi3uv" path="res://Scripts/map.gd" id="1_sr3yt"]
+[ext_resource type="AudioStream" uid="uid://dyg8vo84p5l8a" path="res://Sounds/Countdown.wav" id="2_aai1f"]
+[ext_resource type="Texture2D" uid="uid://ce78020allqa5" path="res://Sprites/the_jungle.png" id="3_euljp"]
+[ext_resource type="PackedScene" uid="uid://bsjjtdkllh34b" path="res://Scenes/kiwi_2x.tscn" id="4_sr3yt"]
+[ext_resource type="PackedScene" uid="uid://bhp782ij05uih" path="res://Scenes/cat.tscn" id="5_0hthe"]
+[ext_resource type="PackedScene" uid="uid://fxb07ef57lv2" path="res://Scenes/bouncy.tscn" id="6_imrb1"]
+[ext_resource type="AudioStream" uid="uid://fuwsrx0c435x" path="res://Sounds/Silly Race - Marble Madness (FM Towns) Music [TubeRipper.cc].ogg" id="7_a88jn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7kgdu"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gflae"]
+distance = -960.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2rtke"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8t1t8"]
+normal = Vector2(-1, 0)
+distance = -1280.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf6aw"]
+size = Vector2(110.548, 18.7072)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbkqq"]
+radius = 2.7029
+height = 7.33228
+
+[node name="town" type="Node2D"]
+script = ExtResource("1_sr3yt")
+
+[node name="Count That Shit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_aai1f")
+
+[node name="Bouncy Collide" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="North" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_7kgdu")
+
+[node name="South" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_gflae")
+
+[node name="West" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_2rtke")
+
+[node name="East" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_8t1t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(695.248, 523)
+scale = Vector2(1.23711, 1.32083)
+texture = ExtResource("3_euljp")
+
+[node name="Collision" type="StaticBody2D" parent="Sprite2D"]
+position = Vector2(-478.5, -396.5)
+scale = Vector2(1.49531, 1.65208)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(-41.241, 80.2618, 2.00537, 52.204, 13.3575, 48.1311, 29.5749, 50.3938, 40.3865, 54.0142, 47.4141, 58.5396, 56.0634, 58.0871, 62.5503, 54.0142, 69.0373, 48.1311, 77.6865, 41.3429, 88.4981, 37.2701, 126.339, 37.2701, 130.123, 17.3581, 246.347, 22.3361, 250.132, 23.2412, 246.888, 48.5837, 249.05, 53.5616, 256.618, 54.4667, 268.511, 50.3938, 282.026, 45.8684, 289.594, 42.7006, 302.027, 45.8684, 312.839, 57.6345, 327.975, 71.2109, 337.705, 77.999, 353.382, 78.4516, 360.41, 76.1889, 369.059, 73.4736, 372.843, 69.4007, 371.762, 61.7074, 364.734, 48.5837, 366.356, 32.7446, 374.465, 15.0954, 391.763, 5.1394, 408.521, 1.97159, 432.307, 9.2123, 442.578, 12.8327, 449.065, 19.6208, 453.93, 30.0293, 451.768, 40.4379, 448.524, 52.204, 439.875, 58.9922, 431.766, 64.4227, 427.442, 68.9482, 425.82, 73.4736, 427.982, 77.999, 432.307, 79.8092, 438.794, 78.4516, 450.146, 73.4736, 462.579, 68.0431, 469.066, 65.7803, 478.256, 69.8532, 502.582, 83.4296, 501.501, 91.5754, 500.42, 108.32, 505.826, 122.801, 513.394, 126.421, 529.611, 125.969, 536.639, 118.275, 550.694, 106.509, 566.911, 100.174, 582.588, 98.8161, 605.292, 104.247, 618.807, 112.845, 629.619, 126.874, 631.24, 142.713, 627.456, 159.91, 624.213, 171.223, 613.942, 180.727, 603.671, 189.777, 584.75, 194.755, 553.937, 196.566, 535.558, 198.828, 526.368, 205.617, 516.097, 218.288, 505.285, 228.244, 498.258, 240.01, 498.258, 252.681, 502.582, 259.469, 510.691, 266.71, 517.719, 277.119, 523.665, 288.885, 527.449, 293.863, 526.908, 299.293, 522.043, 306.534, 515.016, 315.585, 508.529, 320.563, 509.61, 328.256, 516.637, 334.592, 529.611, 340.927, 541.504, 347.715, 551.234, 357.671, 564.749, 368.985, 570.695, 378.036, 567.992, 388.444, 554.478, 398.4, 520.962, 403.831, 513.394, 405.641, 513.394, 442.297, 636.646, 441.392, 637.187, 6.49704, 538.801, -6.1742, 94.9851, -14.32, -58.5396, -12.0573, -58.5396, 81.6194)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(-58.5396, 81.4393, -41.241, 80.0645, -46.1062, 95.1873, -47.1874, 105.269, -51.512, 117.184, -53.1338, 127.266, -52.0526, 136.89, -45.0251, 152.471, -39.6193, 167.136, -30.4294, 179.509, -17.4555, 184.55, -2.31927, 190.049, 19.8445, 192.799, 56.0634, 193.257, 69.5779, 190.966, 76.6054, 188.674, 84.1735, 183.633, 90.6605, 176.301, 100.391, 164.386, 108.5, 148.805, 116.608, 137.806, 125.798, 130.932, 138.772, 129.099, 174.991, 129.099, 186.343, 130.016, 206.345, 132.765, 226.346, 134.14, 232.292, 137.806, 245.266, 163.469, 255.537, 169.427, 267.43, 173.551, 282.026, 172.635, 290.675, 171.26, 302.027, 167.136, 315.001, 166.677, 320.947, 185.925, 323.65, 196.923, 331.219, 203.797, 332.3, 222.586, 343.652, 236.334, 343.652, 242.292, 340.408, 245.041, 335.543, 248.249, 329.056, 249.166, 314.461, 249.166, 304.19, 245.041, 298.784, 240.917, 287.972, 234.501, 273.917, 229.002, 262.024, 228.544, 252.834, 229.46, 245.266, 236.793, 239.861, 241.375, 235.536, 248.249, 232.292, 257.415, 232.292, 265.664, 236.076, 274.829, 241.482, 282.161, 249.05, 290.868, 257.7, 295.451, 271.755, 299.117, 280.945, 302.783, 291.216, 302.783, 314.461, 304.158, 317.163, 315.157, 317.163, 326.155, 314.461, 332.113, 304.19, 335.321, 291.216, 338.528, 277.161, 338.528, 266.349, 338.528, 250.672, 340.82, 224.184, 340.82, 216.616, 339.903, 208.507, 328.905, 199.317, 312.407, 194.992, 307.366, 185.803, 302.325, 172.288, 300.492, 159.314, 299.576, 148.503, 300.492, 142.016, 302.783, 134.988, 306.45, 127.42, 307.366, 122.555, 303.7, 115.527, 299.576, 107.418, 293.618, 102.013, 289.952, 96.0663, 284.453, 92.2822, 280.328, 89.5793, 273.912, 87.9576, 267.955, 92.2822, 261.539, 103.094, 261.539, 114.987, 260.164, 123.636, 260.164, 131.745, 261.539, 141.475, 262.914, 154.989, 264.289, 167.423, 267.038, 178.775, 267.038, 188.505, 264.289, 193.911, 258.79, 198.236, 253.29, 198.236, 244.583, 198.776, 229.002, 196.074, 215.712, 189.587, 205.63, 174.45, 199.673, 156.611, 196.465, 139.313, 196.923, 110.662, 197.84, 91.201, 204.714, 68.4967, 212.046, 30.6561, 212.046, 9.57349, 217.545, 0.383629, 223.503, -4.48159, 231.752, -12.5903, 250.082, -15.8338, 261.081, -15.8338, 279.87, -13.6714, 294.535, -13.6714, 308.283, -11.5091, 319.739, -7.72507, 327.53, -3.94101, 337.154, 4.70827, 345.861, 17.1416, 351.36, 31.1967, 353.651, 40.3865, 354.11, 70.659, 354.568, 83.0923, 355.026, 105.256, 376.106, 129.582, 401.311, 145.8, 413.226, 163.098, 421.017, 191.208, 428.807, 217.156, 434.765, 235.536, 437.056, 245.807, 437.515, 257.159, 432.015, 273.376, 423.767, 287.972, 411.852, 300.405, 400.395, 312.298, 393.062, 336.624, 391.688, 348.517, 426.058, 360.41, 411.393, 371.762, 423.308, 382.574, 410.935, 399.332, 426.516, 411.224, 412.768, 426.361, 426.974, 442.578, 408.185, 463.661, 428.349, 473.932, 415.976, 496.636, 433.39, 513.935, 404.977, 512.853, 439.348, -56.3773, 440.264)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(425.685, 369.879)
+shape = SubResource("RectangleShape2D_tf6aw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite2D/Collision"]
+position = Vector2(158.233, 352.735)
+shape = SubResource("CapsuleShape2D_cbkqq")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(361.491, 126.349, 369.059, 125.433, 375.006, 128.182, 380.952, 132.765, 383.114, 135.973, 383.114, 143.764, 382.033, 148.346, 379.871, 151.554, 374.465, 154.762, 368.519, 154.304, 359.869, 153.387, 355.545, 150.179, 350.68, 143.764, 350.139, 139.639, 353.923, 133.223)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(438.794, 219.837, 438.794, 227.169, 444.741, 230.835, 453.39, 232.668, 458.796, 232.668, 464.202, 226.252, 465.823, 223.044, 466.904, 216.629, 463.661, 211.588, 457.174, 208.838, 447.984, 208.38, 445.822, 209.296, 441.497, 212.963, 439.335, 216.17)
+
+[node name="Kiwi2" parent="." instance=ExtResource("4_sr3yt")]
+position = Vector2(408, 505)
+
+[node name="Kiwi3" parent="." instance=ExtResource("4_sr3yt")]
+position = Vector2(408, 505)
+collision_layer = 4
+collision_mask = 4
+cat_group = "2"
+
+[node name="Cats" type="Node2D" parent="."]
+
+[node name="Cat" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(128, 152)
+JSON_PATH = "res://Cats/Defs/magenta.json"
+
+[node name="Cat9" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(128, 152)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/pink.json"
+
+[node name="Cat2" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(119, 231)
+JSON_PATH = "res://Cats/Defs/lime.json"
+
+[node name="Cat10" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(119, 231)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/orange.json"
+
+[node name="Cat3" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(120, 300)
+JSON_PATH = "res://Cats/Defs/green.json"
+
+[node name="Cat11" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(120, 300)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/magenta.json"
+
+[node name="Cat4" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(119, 363)
+JSON_PATH = "res://Cats/Defs/gray.json"
+
+[node name="Cat12" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(119, 363)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/lime.json"
+
+[node name="Cat5" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(196, 184)
+JSON_PATH = "res://Cats/Defs/cyan.json"
+
+[node name="Cat13" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(196, 184)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/green.json"
+
+[node name="Cat6" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(196, 262)
+JSON_PATH = "res://Cats/Defs/blue.json"
+
+[node name="Cat14" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(196, 262)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/gray.json"
+
+[node name="Cat7" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(189, 330)
+JSON_PATH = "res://Cats/Defs/yellow.json"
+
+[node name="Cat15" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(189, 330)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/cyan.json"
+
+[node name="Cat8" parent="Cats" groups=["1"] instance=ExtResource("5_0hthe")]
+position = Vector2(55, 259)
+JSON_PATH = "res://Cats/Defs/white.json"
+
+[node name="Cat16" parent="Cats" groups=["2"] instance=ExtResource("5_0hthe")]
+position = Vector2(55, 259)
+collision_layer = 4
+collision_mask = 4
+JSON_PATH = "res://Cats/Defs/blue.json"
+
+[node name="Bouncy" parent="." instance=ExtResource("6_imrb1")]
+position = Vector2(640, 480)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_a88jn")
+
+[connection signal="finished" from="Count That Shit" to="." method="_on_count_that_shit_finished"]

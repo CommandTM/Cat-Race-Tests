@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bonnw3e66tolb"
+path="res://.godot/imported/3D Space Cadet Pinball Music full.ogg-53f79f97442a22dd7b5a1eba4903d2df.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/3D Space Cadet Pinball Music full.ogg"
+dest_files=["res://.godot/imported/3D Space Cadet Pinball Music full.ogg-53f79f97442a22dd7b5a1eba4903d2df.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

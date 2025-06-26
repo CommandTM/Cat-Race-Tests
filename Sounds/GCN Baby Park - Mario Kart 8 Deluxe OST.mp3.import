@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx3lajjrxibip"
+path="res://.godot/imported/GCN Baby Park - Mario Kart 8 Deluxe OST.mp3-a14446ef908ff93fa49fa074be6128cf.mp3str"
+
+[deps]
+
+source_file="res://Sounds/GCN Baby Park - Mario Kart 8 Deluxe OST.mp3"
+dest_files=["res://.godot/imported/GCN Baby Park - Mario Kart 8 Deluxe OST.mp3-a14446ef908ff93fa49fa074be6128cf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

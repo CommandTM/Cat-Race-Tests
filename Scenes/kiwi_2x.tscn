@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsjjtdkllh34b"]
+
+[ext_resource type="Script" uid="uid://ba15jekyx8rbc" path="res://Scripts/kiwi_2x.gd" id="1_wl7fd"]
+[ext_resource type="Texture2D" uid="uid://dnseuuvrndli" path="res://Sprites/goal.png" id="2_itq7y"]
+[ext_resource type="AudioStream" uid="uid://dqfbcpy1mx2vc" path="res://Sounds/262312__steffcaffrey__cat-meow1.wav" id="3_0xpng"]
+[ext_resource type="AudioStream" uid="uid://7q45jtwug6j3" path="res://Sounds/crowd-cheer-applause-victory-fanfare-clapping-236698.mp3" id="4_3m2at"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6ien"]
+radius = 8.0
+
+[sub_resource type="SystemFont" id="SystemFont_6t0vi"]
+font_names = PackedStringArray("Ti83Pluspc")
+subpixel_positioning = 0
+
+[node name="Kiwi" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_wl7fd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_itq7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("CircleShape2D_l6ien")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Win" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(641, 479)
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Cat Name" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_right = 1280.0
+offset_bottom = 960.0
+theme_override_fonts/normal_font = SubResource("SystemFont_6t0vi")
+bbcode_enabled = true
+text = "[color=magenta][font_size=150]Resolute Mind Afternoon"
+scroll_active = false
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="Image Timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="Meow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0xpng")
+
+[node name="Victory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3m2at")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Image Timer" to="." method="_on_image_timer_timeout"]
+[connection signal="finished" from="Meow" to="." method="_on_meow_finished"]
+[connection signal="finished" from="Victory" to="." method="_on_victory_finished"]

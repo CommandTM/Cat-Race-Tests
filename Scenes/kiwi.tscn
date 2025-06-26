@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxo3w2upvyups"]
+[gd_scene load_steps=7 format=3 uid="uid://cxo3w2upvyups"]
 
 [ext_resource type="Texture2D" uid="uid://dnseuuvrndli" path="res://Sprites/goal.png" id="1_hm1w3"]
 [ext_resource type="Script" uid="uid://bqtfosqu72cv8" path="res://Scripts/kiwi.gd" id="1_l6ien"]
+[ext_resource type="AudioStream" uid="uid://7q45jtwug6j3" path="res://Sounds/crowd-cheer-applause-victory-fanfare-clapping-236698.mp3" id="4_6t0vi"]
 [ext_resource type="AudioStream" uid="uid://dqfbcpy1mx2vc" path="res://Sounds/262312__steffcaffrey__cat-meow1.wav" id="4_87o5q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6ien"]
 radius = 8.0
+
+[sub_resource type="SystemFont" id="SystemFont_6t0vi"]
+font_names = PackedStringArray("Ti83Pluspc")
+subpixel_positioning = 0
 
 [node name="Kiwi" type="Area2D"]
 scale = Vector2(2, 2)
@@ -29,6 +34,7 @@ scale = Vector2(1e-05, 1e-05)
 visible = false
 offset_right = 1280.0
 offset_bottom = 960.0
+theme_override_fonts/normal_font = SubResource("SystemFont_6t0vi")
 bbcode_enabled = true
 text = "[color=magenta][font_size=150]Resolute Mind Afternoon"
 scroll_active = false
@@ -44,6 +50,9 @@ one_shot = true
 
 [node name="Meow" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_87o5q")
+
+[node name="Victory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6t0vi")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

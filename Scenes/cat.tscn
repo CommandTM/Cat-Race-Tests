@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ccahagj7b8l1w" path="res://Sounds/CatBounce.ogg" id="2_23j0x"]
 
 [node name="Cat" type="CharacterBody2D" groups=["cat"]]
+scale = Vector2(1.49, 1.49)
 script = ExtResource("1_r2uub")
 SPEED = 200.0
 BOUNCE_RANDOMNESS = 0.524

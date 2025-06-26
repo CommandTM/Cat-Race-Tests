@@ -5,6 +5,8 @@ extends Area2D
 @onready var meow: AudioStreamPlayer2D = get_node("Meow")
 @onready var timer: Timer = get_node("Timer")
 @onready var image_timer: Timer = get_node("Image Timer")
+@onready var victory: AudioStreamPlayer2D = get_node("Victory")
+@onready var music: AudioStreamPlayer2D = %Music
 
 var text_size: int = 0
 
@@ -28,6 +30,7 @@ func _on_body_entered(body:Node2D) -> void:
 		var image = Image.new()
 		image.load(body.data['sprites']['win'])
 		win_image.texture = ImageTexture.create_from_image(image)
+		music.playing = false
 		meow.play()
 
 
@@ -47,4 +50,5 @@ func _on_image_timer_timeout() -> void:
 
 
 func _on_meow_finished() -> void:
+	victory.play()
 	image_timer.start()

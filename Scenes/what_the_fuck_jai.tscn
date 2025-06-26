@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxf3vw2vom5m0"]
+
+[ext_resource type="Script" uid="uid://cn5tkp5qdi3uv" path="res://Scripts/map.gd" id="1_4r5x5"]
+[ext_resource type="AudioStream" uid="uid://dyg8vo84p5l8a" path="res://Sounds/Countdown.wav" id="2_0rhyc"]
+[ext_resource type="Texture2D" uid="uid://ivmqd4tcdy00" path="res://Sprites/what_the_fuck_jai.png" id="3_0rhyc"]
+[ext_resource type="PackedScene" uid="uid://cxo3w2upvyups" path="res://Scenes/kiwi.tscn" id="4_21oui"]
+[ext_resource type="PackedScene" uid="uid://bhp782ij05uih" path="res://Scenes/cat.tscn" id="5_64127"]
+[ext_resource type="PackedScene" uid="uid://fxb07ef57lv2" path="res://Scenes/bouncy.tscn" id="6_xsfvx"]
+[ext_resource type="AudioStream" uid="uid://bk8yb3r4slsky" path="res://Sounds/awesome.ogg" id="7_4r5x5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7kgdu"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gflae"]
+distance = -960.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2rtke"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8t1t8"]
+normal = Vector2(-1, 0)
+distance = -1280.0
+
+[node name="town" type="Node2D"]
+script = ExtResource("1_4r5x5")
+
+[node name="Count That Shit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_0rhyc")
+
+[node name="Bouncy Collide" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="North" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_7kgdu")
+
+[node name="South" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_gflae")
+
+[node name="West" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_2rtke")
+
+[node name="East" type="CollisionShape2D" parent="Bouncy Collide"]
+shape = SubResource("WorldBoundaryShape2D_8t1t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(637, 487.5)
+scale = Vector2(1.16719, 1.04896)
+texture = ExtResource("3_0rhyc")
+
+[node name="Collision" type="StaticBody2D" parent="Sprite2D"]
+position = Vector2(-478.5, -396.5)
+scale = Vector2(1.49531, 1.65208)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(640.288, 467.645, 638.569, 454.373, 631.694, 443.986, 614.505, 439.947, 592.159, 438.793, 572.678, 443.986, 553.77, 452.642, 523.403, 448.603, 511.371, 441.101, 494.755, 424.367, 479.858, 411.672, 440.323, 410.518, 430.01, 412.826, 426.572, 423.213, 415.686, 437.062, 406.518, 443.409, 380.162, 443.986, 353.806, 443.409, 325.73, 435.908, 301.666, 428.983, 292.498, 414.557, 278.174, 403.016, 278.174, 371.856, 283.904, 351.082, 285.05, 337.81, 282.758, 330.885, 276.455, 324.538, 265.569, 324.538, 252.964, 321.075, 247.234, 315.882, 240.931, 290.492, 234.056, 274.912, 245.515, 276.643, 266.142, 282.99, 291.925, 294.531, 311.406, 302.033, 324.011, 302.033, 335.471, 295.685, 344.065, 281.259, 344.638, 304.918, 360.108, 298.571, 372.14, 292.8, 388.183, 284.145, 399.07, 278.374, 403.653, 322.23, 424.28, 314.151, 431.156, 308.38, 441.469, 302.033, 441.469, 309.535, 441.469, 327.423, 448.345, 344.734, 459.231, 356.852, 474.128, 363.777, 498.766, 367.816, 518.246, 365.508, 537.727, 359.161, 557.208, 347.043, 566.376, 331.462, 583.565, 297.417, 636.277, 339.541, 638.569, 329.731, 616.224, 274.335, 615.651, 270.872, 623.099, 270.295, 659.196, 285.876, 666.644, 286.453, 633.412, 233.941, 632.839, 228.748, 641.434, 227.594, 682.688, 225.286, 646.591, 157.771, 642.007, 150.847, 617.37, 195.279, 576.689, 136.421, 553.77, 169.889, 541.165, 177.968, 531.425, 182.007, 522.257, 183.738, 526.268, 170.466, 540.592, 143.345, 512.517, 149.116, 509.652, 131.227, 519.392, 120.84, 538.3, 118.532, 562.365, 113.339, 579.554, 102.952, 588.721, 89.6799, 593.305, 76.4079, 585.856, 49.2867, 572.105, 36.5917, 553.77, 31.9753, 532.571, 33.7065, 506.214, 38.8999, 490.744, 48.1326, 483.869, 58.5194, 483.296, 69.4833, 484.442, 89.6799, 485.587, 105.26, 484.442, 115.07, 471.263, 120.84, 462.669, 122.572, 455.22, 130.65, 444.334, 147.385, 428.864, 173.352, 417.978, 157.771, 405.372, 128.919, 401.362, 144.499, 392.767, 167.004, 384.173, 184.893, 375.578, 195.856, 376.724, 180.276, 380.162, 162.388, 368.13, 176.237, 356.67, 183.738, 333.752, 199.319, 332.606, 169.889, 329.168, 128.919, 374.432, 113.339, 370.422, 101.221, 363.546, 91.4111, 362.4, 73.5226, 360.108, 2.54596, 356.67, -16.4966, 346.93, -11.8802, 296.509, -10.7261, 189.938, -9.57201, 183.062, -13.6113, 169.311, -14.7654, 164.727, -28.0375, 158.424, -34.962, 151.549, -34.962, 149.83, -14.7654, 141.808, -8.99497, 113.16, -6.10974, 99.409, -3.80155, 94.2523, 6.58528, 95.3983, 21.5885, 96.5442, 64.2899, 101.701, 85.6406, 106.858, 109.3, 106.858, 117.955, 119.463, 124.88, 136.079, 129.496, 179.051, 128.342, 214.002, 128.342, 246.088, 126.034, 269.58, 127.765, 279.893, 130.65, 281.612, 136.998, 282.758, 170.466, 276.455, 163.542, 269.58, 151.424, 223.169, 161.234, 239.785, 172.198, 196.813, 173.929, 191.083, 174.506, 205.408, 210.283, 195.094, 209.129, 177.332, 201.627, 168.165, 192.394, 163.581, 192.394, 149.257, 204.512, 128.63, 214.899, 118.89, 219.515, 109.149, 220.092, 108.576, 196.433, 59.8744, 199.319, 44.4044, 158.348, 8.30757, 182.584, -9.45435, 149.116, -41.5404, 161.811, -6.01656, 173.929, -34.0918, 200.473, 7.16164, 209.129, 30.0802, 224.132, 34.091, 235.096, 31.2262, 251.253, 23.7776, 271.45, 7.73461, 282.99, -11.7462, 284.145, -30.0811, 283.567, -38.6756, 285.876, -38.6756, 292.223, -23.2055, 297.417, 4.86978, 310.112, -27.2163, 323.384, 15.7561, 348.774, 14.6102, 353.39, -24.9244, 358.583, -2.0058, 416.288, 33.518, 363.2, 80.5012, 379.934, 77.6363, 391.475, 71.9067, 397.246, 54.1448, 403.593, 112.014, 419.75, 113.733, 423.79, 103.42, 433.022, 95.3983, 452.065, 86.8038, 469.953, 164.154, 450.911, 176.759, 483.802, 188.219, 461.875, 229.472, 486.111, 275.882, 468.222, 299.947, 498.806, 346.93, 489.573, 368.13, 503.422, 395.632, 483.225, 409.956, 506.884, 569.813, 502.845, 606.483, 498.229, 628.829, 495.343, 640.288, 478.032, 640.288, 472.839, 748.005, 473.993, 747.432, 530.543, -109.15, 529.966, -107.431, -51.1193, 748.578, -51.1193, 748.005, 472.839, 640.288, 471.685)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(514.809, 217.207, 517.674, 225.863, 521.111, 240.289, 540.592, 262.794, 541.165, 266.256, 521.111, 266.256, 522.83, 286.453, 522.83, 299.725, 514.809, 289.338, 509.079, 270.295, 506.214, 270.872, 498.193, 284.145, 485.014, 300.879, 483.869, 295.685, 493.036, 266.833, 493.609, 260.486, 466.107, 258.754, 474.128, 248.945, 490.744, 239.135, 495.901, 238.558, 498.193, 232.21, 510.798, 219.515)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(167.592, 309.535, 165.3, 319.921, 159.57, 337.81, 150.403, 353.967, 137.225, 344.157, 123.474, 325.692, 115.452, 312.42, 125.192, 315.305, 141.235, 327.423, 144.1, 326.846, 152.695, 315.882, 163.581, 308.958)
+
+[node name="Kiwi" parent="." instance=ExtResource("4_21oui")]
+position = Vector2(1138, 886)
+
+[node name="Cats" type="Node2D" parent="."]
+
+[node name="Cat" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(606, 117)
+JSON_PATH = "res://Cats/Defs/lime.json"
+
+[node name="Cat2" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(517, 118)
+JSON_PATH = "res://Cats/Defs/white.json"
+
+[node name="Cat3" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(421, 132)
+JSON_PATH = "res://Cats/Defs/orange.json"
+
+[node name="Cat4" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(337, 145)
+JSON_PATH = "res://Cats/Defs/green.json"
+
+[node name="Cat5" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(341, 217)
+JSON_PATH = "res://Cats/Defs/gray.json"
+
+[node name="Cat6" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(432, 206)
+JSON_PATH = "res://Cats/Defs/magenta.json"
+
+[node name="Cat7" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(526, 210)
+JSON_PATH = "res://Cats/Defs/yellow.json"
+
+[node name="Cat8" parent="Cats" instance=ExtResource("5_64127")]
+position = Vector2(609, 213)
+JSON_PATH = "res://Cats/Defs/pink.json"
+
+[node name="Bouncy" parent="." instance=ExtResource("6_xsfvx")]
+position = Vector2(640, 480)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_4r5x5")
+
+[connection signal="finished" from="Count That Shit" to="." method="_on_count_that_shit_finished"]

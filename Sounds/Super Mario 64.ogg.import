@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0jou4ukukqlc"
+path="res://.godot/imported/Super Mario 64.ogg-5abe39384ce659b05ae1a2c77b721521.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Super Mario 64.ogg"
+dest_files=["res://.godot/imported/Super Mario 64.ogg-5abe39384ce659b05ae1a2c77b721521.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

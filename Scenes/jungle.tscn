@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bkelpflqjhlbp"]
+[gd_scene load_steps=14 format=3 uid="uid://bkelpflqjhlbp"]
 
 [ext_resource type="Script" uid="uid://cn5tkp5qdi3uv" path="res://Scripts/map.gd" id="1_d7e3u"]
 [ext_resource type="AudioStream" uid="uid://dyg8vo84p5l8a" path="res://Sounds/Countdown.wav" id="2_tf6aw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxo3w2upvyups" path="res://Scenes/kiwi.tscn" id="4_lkm5k"]
 [ext_resource type="PackedScene" uid="uid://bhp782ij05uih" path="res://Scenes/cat.tscn" id="5_cbkqq"]
 [ext_resource type="PackedScene" uid="uid://fxb07ef57lv2" path="res://Scenes/bouncy.tscn" id="6_3yqpr"]
+[ext_resource type="AudioStream" uid="uid://fuwsrx0c435x" path="res://Sounds/Silly Race - Marble Madness (FM Towns) Music [TubeRipper.cc].ogg" id="7_tf6aw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7kgdu"]
 normal = Vector2(0, 1)
@@ -23,47 +24,9 @@ distance = -1280.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf6aw"]
 size = Vector2(110.548, 18.7072)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2x73"]
-radius = 16.2174
-height = 32.4348
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkm5k"]
-radius = 14.055
-height = 28.11
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbkqq"]
 radius = 2.7029
 height = 7.33228
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqpr"]
-size = Vector2(7.83768, 19.1654)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qydal"]
-size = Vector2(7.02756, 22.3733)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbsbq"]
-size = Vector2(7.56816, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rrgc"]
-size = Vector2(10, 35.6631)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaexg"]
-size = Vector2(7.83765, 20.6221)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3s7qv"]
-size = Vector2(8.91885, 29.7056)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_teqxr"]
-size = Vector2(6.54401, 29.7056)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jm8f"]
-size = Vector2(11.6219, 53.6176)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpuvd"]
-size = Vector2(10.271, 12.2914)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o86dd"]
-size = Vector2(10.8117, 16.4158)
 
 [node name="town" type="Node2D"]
 script = ExtResource("1_d7e3u")
@@ -107,57 +70,15 @@ polygon = PackedVector2Array(-58.5396, 81.4393, -41.241, 80.0645, -46.1062, 95.1
 position = Vector2(425.685, 369.879)
 shape = SubResource("RectangleShape2D_tf6aw")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(366.897, 140.556)
-shape = SubResource("CapsuleShape2D_d2x73")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(452.308, 220.295)
-shape = SubResource("CapsuleShape2D_lkm5k")
-
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite2D/Collision"]
 position = Vector2(158.233, 352.735)
 shape = SubResource("CapsuleShape2D_cbkqq")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(140.259, 27.8627)
-shape = SubResource("RectangleShape2D_3yqpr")
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(361.491, 126.349, 369.059, 125.433, 375.006, 128.182, 380.952, 132.765, 383.114, 135.973, 383.114, 143.764, 382.033, 148.346, 379.871, 151.554, 374.465, 154.762, 368.519, 154.304, 359.869, 153.387, 355.545, 150.179, 350.68, 143.764, 350.139, 139.639, 353.923, 133.223)
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(164.99, 28.9265)
-shape = SubResource("RectangleShape2D_qydal")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(206.885, 27.8217)
-shape = SubResource("RectangleShape2D_mbsbq")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(221.887, 35.195)
-shape = SubResource("RectangleShape2D_1rrgc")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(390.548, 12.928)
-shape = SubResource("RectangleShape2D_yaexg")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(440.01, 23.9674)
-shape = SubResource("RectangleShape2D_3s7qv")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(551.263, 117.372)
-shape = SubResource("RectangleShape2D_teqxr")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(612.185, 127.495)
-shape = SubResource("RectangleShape2D_3jm8f")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(184.451, 125.621)
-shape = SubResource("RectangleShape2D_fpuvd")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Sprite2D/Collision"]
-position = Vector2(422.036, 356.818)
-shape = SubResource("RectangleShape2D_o86dd")
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Sprite2D/Collision"]
+polygon = PackedVector2Array(438.794, 219.837, 438.794, 227.169, 444.741, 230.835, 453.39, 232.668, 458.796, 232.668, 464.202, 226.252, 465.823, 223.044, 466.904, 216.629, 463.661, 211.588, 457.174, 208.838, 447.984, 208.38, 445.822, 209.296, 441.497, 212.963, 439.335, 216.17)
 
 [node name="Kiwi" parent="." instance=ExtResource("4_lkm5k")]
 position = Vector2(408, 505)
@@ -166,19 +87,19 @@ position = Vector2(408, 505)
 
 [node name="Cat" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(128, 152)
-JSON_PATH = "res://Cats/Defs/blue.json"
+JSON_PATH = "res://Cats/Defs/white.json"
 
 [node name="Cat2" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(119, 231)
-JSON_PATH = "res://Cats/Defs/cyan.json"
+JSON_PATH = "res://Cats/Defs/pink.json"
 
 [node name="Cat3" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(120, 300)
-JSON_PATH = "res://Cats/Defs/gray.json"
+JSON_PATH = "res://Cats/Defs/orange.json"
 
 [node name="Cat4" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(119, 363)
-JSON_PATH = "res://Cats/Defs/green.json"
+JSON_PATH = "res://Cats/Defs/magenta.json"
 
 [node name="Cat5" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(196, 184)
@@ -186,17 +107,21 @@ JSON_PATH = "res://Cats/Defs/lime.json"
 
 [node name="Cat6" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(196, 262)
-JSON_PATH = "res://Cats/Defs/magenta.json"
+JSON_PATH = "res://Cats/Defs/green.json"
 
 [node name="Cat7" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(189, 330)
-JSON_PATH = "res://Cats/Defs/orange.json"
+JSON_PATH = "res://Cats/Defs/gray.json"
 
 [node name="Cat8" parent="Cats" instance=ExtResource("5_cbkqq")]
 position = Vector2(55, 259)
-JSON_PATH = "res://Cats/Defs/pink.json"
+JSON_PATH = "res://Cats/Defs/cyan.json"
 
 [node name="Bouncy" parent="." instance=ExtResource("6_3yqpr")]
 position = Vector2(640, 480)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_tf6aw")
 
 [connection signal="finished" from="Count That Shit" to="." method="_on_count_that_shit_finished"]

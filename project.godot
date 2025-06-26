@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cat Race Tests"
-run/main_scene="uid://1t75jrwxwcfn"
+run/main_scene="uid://dys5i5gr1crgt"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
@@ -23,13 +23,9 @@ TheWorldIsFrozen="*res://Scripts/the_world_is_frozen.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=960
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
 
 project/assembly_name="Cat Race Tests"
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
